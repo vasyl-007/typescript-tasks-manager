@@ -2,7 +2,7 @@ import React from "react";
 
 export const Navbar: React.FC = () => (
   <nav>
-    <div className="nav-wrapper">
+    <div className="nav-wrapper teal darken-2 px1">
       <a href="_" className="brand-logo">
         React + TypeScript
       </a>
