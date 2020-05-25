@@ -4,7 +4,7 @@ export const Navbar: React.FC = () => (
   <nav>
     <div className="nav-wrapper teal darken-2 px1">
       <a href="_" className="brand-logo">
-        React + TypeScript
+        Tasks manager in TypeScript
       </a>
       <ul className="right hide-on-med-and-down">
         <li>
