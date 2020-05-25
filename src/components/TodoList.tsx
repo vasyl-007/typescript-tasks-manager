@@ -19,6 +19,16 @@ export const TodoList: React.FC<TodoListProps> = ({
   onToggle,
   onRemove,
 }) => {
+  if (todos.length === 0) {
+    return <p className="center">There is no available tasks</p>;
+  }
+
+  const removeHandler = (event: React.MouseEvent, id: number) => {
+    event.preventDefault();
+
+    onRemove(id);
+  };
+
   return (
     <ul>
       {todos.map((todo) => {
@@ -33,20 +43,22 @@ export const TodoList: React.FC<TodoListProps> = ({
               {/* <input
                 type="checkbox"
                 defaultChecked={todo.completed}
-                onChange={() => onToggle(todo.id)}
+                className="filled-in"
               /> */}
               <input
                 type="checkbox"
                 checked={todo.completed}
-                // onChange={onToggle.bind(null, todo.id)}
+                onChange={onToggle.bind(null, todo.id)}
                 // className="filled-in"
-                onChange={() => onToggle(todo.id)}
+                // onClick={() => onToggle(todo.id)}
+                // onChange={() => onToggle(todo.id)}
               />
               <span>{todo.title}</span>
               <i
                 className="material-icons teal-text text-darken-1"
                 // onClick={() => onRemove(todo.id)}
-                onClick={onRemove.bind(null, todo.id)}
+                onClick={(event) => removeHandler(event, todo.id)}
+                // onClick={onRemove.bind(null, todo.id)}
               >
                 delete_sweep
               </i>
