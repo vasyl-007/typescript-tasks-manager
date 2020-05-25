@@ -1,30 +1,31 @@
 import React, { Fragment } from "react";
+import {useHistory} from 'react-router-dom'
 
 export const AboutPage: React.FC = () => {
+    const history = useHistory();
   return (
     <Fragment>
       <h1>Info about this App</h1>
       <p>
         My name is Vasyl. I'm a Front End Developer! <br />
-        <hr />
-        And my key is Bootcamp, and I want to say about it more. First off, if
-        anyone asked me about my recommendation of a bootcamp, I want to
-        recommend it 100%. It provides a great experience for you to dive into
-        code every single day and really grind. Support systems are great,
-        mentors are very knowledgeable, and for most people, it really helps
-        kick start your career as a junior dev. In saying that, everything you
-        can learn there, you can learn for free online, just have to be
-        disciplined. I had a great cohort, and I still speak with a lot of my
-        classmates daily. I showed up early everyday, and was usually one of the
-        last to leave around 10-11 at night. They were long days. And I will
-        admit, I didn’t get everything the first time, or the second……or the
-        fifth, but I tried damn hard, and the instructors knew that I was trying
-        my best.
+        <br />
+        In my opinion, one of the most important reasons for using this Tasks manager is the
+        organization. Organizing your tasks with a list can make everything much
+        more manageable and make you feel grounded. Seeing a clear outline of
+        your completed and uncompleted tasks will help you feel organized and
+        stay mentally focused.
+        <br />
+        <br />
+        As you cross items off your to-do list, you'll feel a sense of progress
+        and accomplishment that can be missed when rushing from one activity to
+        the next. The affirmation that you are making progress will help
+        motivate you to keep moving forward rather than feeling overwhelmed.
+        <br />
+        <br />
       </p>
-      {/* <button className="btn" onClick={() => history.push("/")}>
+      <button className="btn" onClick={() => history.push("/")}>
         Back to List of tasks
-      </button> */}
-      <button className="btn">Back to List of tasks</button>
+      </button>
     </Fragment>
   );
 };
