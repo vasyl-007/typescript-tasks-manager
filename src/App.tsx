@@ -30,27 +30,24 @@ const App: React.FC = () => {
   };
 
   const toggleHandler = (id: number) => {
-    // console.log("Toggler is working", id);
+    console.log("Toggler is working", id);
+    // setTodos((prev) =>
+    //   prev.map((todo) =>
+    //     todo.id !== id ? todo : { ...todo, completed: !todo.completed }
+    //   )
+    // );
+
     setTodos((prev) =>
-      prev.map((todo) =>
-        todo.id !== id ? todo : { ...todo, completed: !todo.completed }
-      )
+      prev.map((todo) => {
+        if (todo.id === id) {
+          console.log("id the same!!!", todo.id, id);
+          // console.log("completed: ", todo.completed);
+          todo.completed = !todo.completed;
+          // console.log("id the same!!!", todo.completed);
+        }
+        return todo;
+      })
     );
-    // prev.map((todo) => {
-    //   if (todo.id === id) {
-    //     // console.log("id the same!!!", todo.id, id);
-    //     console.log("completed: ", todo.completed);
-    //     todo.completed = false;
-    //     todo.completed = true;
-    //     // todo.completed = !todo.completed;
-    //     console.log("completed: ", todo.completed);
-    //     // console.log("id the same!!!", todo.completed);
-    //   }
-
-    //   return todo;
-    // })
-
-    // prev.map((todo) => (todo.id !== id) ? todo : ({...todo, completed: !todo.completed}))
   };
 
   const removeHandler = (id: number) => {
